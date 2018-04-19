@@ -9,4 +9,3 @@ generate_data = function(n, p){
   }
   return(c(covariates = covariates, responses = responses))
 }
-hi
