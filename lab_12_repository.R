@@ -9,3 +9,10 @@ generate_data = function(n, p){
   }
   return(c(covariates = covariates, responses = responses))
 }
+
+
+model_select = function(covariates, responses, cutoff){
+  pros.lm = lm(responses ~ covariates)
+  indeces = which((summary(pros.lm)$coefficients[, 4]) < 0.0001)
+  lm(responses ~ covariates[, indeces])
+}
