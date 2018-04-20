@@ -30,3 +30,18 @@ run_simulation = function(n_trials, n, p, cutoff){
   }
   hist(graph)
 }
+run_simulation = function(n_trials, n, p, cutoff){
+  df = generate_data(n,p)
+  graph = vector("integer")
+  for (i in 1:n_trials){
+    for (j in 1:length(model_select(df[,1], df[, -1]))){
+      graph[ij] = model_select(df[,1], df[, -1])[j]
+    }
+  }
+  return(graph)
+}
+make_plot = function(datapath){
+  df = read.csv(datapath)
+  
+  
+}
